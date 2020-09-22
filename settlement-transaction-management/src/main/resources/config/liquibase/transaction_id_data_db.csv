@@ -1,0 +1,10 @@
+symbol;company_name;stock_exchange_prefix
+AAPL;Apple Inc.;NASDAQ
+AMZN;Amazon.com, Inc.;NASDAQ
+ADP;Automatic Data Processing, Inc.;NASDAQ
+CSCO;Cisco Systems, Inc.;NASDAQ
+EBAY;eBay Inc.;NASDAQ
+FB;Facebook, Inc.;NYSE
+INTC;Intel Corporation;NYSE
+PYPL;PayPal Holdings, Inc.;NYSE
+TSLA;Tesla Motors, Inc.;NYSE

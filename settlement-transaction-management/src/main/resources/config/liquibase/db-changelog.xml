@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+
+    <changeSet id="1" author="khiem.truong">
+        <createTable tableName="transaction">
+           <column name="transaction_code" type ="varchar(20)">
+               <constraints nullable="false" />
+           </column>
+            <column name="company_symbol" type="varchar(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="market_code" type="varchar(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="transaction_type" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="stock_value" type="varchar(255)"/>
+            <column name="commission" type="double"/>
+            <column name="tax" type="double"/>
+            <column name="client" type="varchar(255)"/>
+            <column name="created_on" type="timestamp"/>
+        </createTable>
+        <addPrimaryKey columnNames="transaction_code,company_symbol,market_code,transaction_type" tableName="transaction"/>
+    </changeSet>
+
+</databaseChangeLog>

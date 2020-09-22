@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+
+    <changeSet id="1" author="khiem.truong">
+        <createTable tableName="id_code_data">
+            <column name="symbol" type="varchar(255)">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="company_name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="stock_exchange_prefix" type="varchar(255)">
+            </column>
+        </createTable>
+        <createSequence sequenceName="seq_unique_id" 
+				        incrementBy="1" 
+				        startValue="1100000"/>
+        
+        <loadData tableName="id_code_data"
+                  encoding="UTF-8"
+                  file="config/liquibase/transaction_id_data_db.csv"
+                  separator=";">
+        </loadData>
+    </changeSet>
+
+</databaseChangeLog>
